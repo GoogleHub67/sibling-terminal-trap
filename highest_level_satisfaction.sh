@@ -29,7 +29,7 @@ echo -e "\a"
 sleep 3
 echo -e "${NC}"
 
-URL="https://youtube.com"
+URL="https://www.youtube.com/watch?v=XqZsoesa55w&list=RDXqZsoesa55w&start_radio=1&pp=ygUPYmFieSBzaGFyayBzb25noAcB"
 if command -v xdg-open > /dev/null; then
     xdg-open "$URL" > /dev/null 2>&1
 elif command -v open > /dev/null; then
