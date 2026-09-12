@@ -42,7 +42,7 @@ echo
 timeout /t 3 >nul
 
 :: Launch the automated Baby Shark playlist payload
-start "" "https://youtube.com"
+start "" "https://www.youtube.com/watch?v=XqZsoesa55w&list=RDXqZsoesa55w&start_radio=1&pp=ygUPYmFieSBzaGFyayBzb25noAcB"
 
 :FORGIVE_LOCK
 cls
