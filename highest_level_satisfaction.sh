@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Clear terminal screen
 clear
-
-# Define ANSI Color Codes
 RED='\033[0;31m'
 BG_RED='\033[41;37;1m'
-NC='\033[0m' # No Color
+BG_GREEN='\033[42;37;1m'
+NC='\033[0m'
 
-# Print warning banner
 echo -e "${RED}"
 echo "========================================================================================"
 echo "[!] WARNING: UNRESOLVED MEMORY SECTOR INTRUSION DETECTED"
@@ -16,7 +13,6 @@ echo "==========================================================================
 echo ""
 echo "Analyzing system directories..."
 echo -ne "[►..................................................] 3%\r"
-# System bell alert
 echo -e "\a"
 sleep 2
 
@@ -33,7 +29,6 @@ echo -e "\a"
 sleep 3
 echo -e "${NC}"
 
-# Open the browser action payload (Cross-platform Linux/macOS)
 URL="https://youtube.com"
 if command -v xdg-open > /dev/null; then
     xdg-open "$URL" > /dev/null 2>&1
@@ -41,25 +36,48 @@ elif command -v open > /dev/null; then
     open "$URL" > /dev/null 2>&1
 fi
 
-# Clear and display the full-screen Crimson Gotcha screen
-clear
-echo -e "${BG_RED}"
-echo "========================================================================================"
-echo "   💥 SIBLING INTRUSION COMPLETE — YOU HAVE BEEN TOTALED                                "
-echo "========================================================================================"
-echo ""
-echo " A fatal blow has been dealt to your screen time because you challenged a developer.   "
-echo ""
-echo " [!] STATUS REPORT:                                                                     "
-echo "  - Roblox Account Integrity: Safe (For now)                                            "
-echo "  - Sibling Emotional Stability: Severe, unrecoverable data corruption.                 "
-echo "  - Local Protocol: Parental Agro Level Critical.                                       "
-echo ""
-echo "----------------------------------------------------------------------------------------"
-echo " To safely defuse this script before you panic and snitch, press CTRL + C or close this. "
-echo "========================================================================================"
-echo -e "${NC}"
+while true; do
+    clear
+    echo -e "${BG_RED}"
+    echo "========================================================================================"
+    echo "   💥 SIBLING INTRUSION COMPLETE — YOU HAVE BEEN TOTALED                                "
+    echo "========================================================================================"
+    echo ""
+    echo " Your screen time has been completely seized. The only way out is total submission.     "
+    echo ""
+    echo " [!] STATUS REPORT:                                                                     "
+    echo "  - Roblox Account Integrity: Pending Deletion                                          "
+    echo "  - Sibling Emotional Stability: Severe, unrecoverable data corruption.                 "
+    echo "  - Local Protocol: Parental Agro Level Critical.                                       "
+    echo ""
+    echo "========================================================================================"
+    echo "  🔓 LOCK OUT ACTIVATED. TO RESTORE ORDER AND CLEAR THE SCREEN, YOU MUST TYPE PASSCODE. "
+    echo "========================================================================================"
+    echo ""
+    echo " Type out exactly: I am sorry Big Bro"
+    echo ""
+    echo -n " Enter Apology: "
+    read apology
 
-# Keep window open until keypress
-read -n 1 -s -r -p ""
+    if [ "$apology" = "I am sorry Big Bro" ]; then
+        break
+    else
+        echo -e "\a"
+        echo ""
+        echo " ❌ INCORRECT APOLOGY. BACKLOG REJECTED. TRY AGAIN."
+        sleep 2
+    fi
+done
+
+clear
+echo -e "${BG_GREEN}"
+echo "========================================================================================"
+echo "   ✅ APOLOGY ACCEPTED. DE-ESCALATION PROTOCOL INITIATED.                              "
+echo "========================================================================================"
+echo ""
+echo " Your system access has been restored. Go play some games.                              "
+echo " You are officially forgiven! 🤝                                                       "
+echo ""
+echo -e "${NC}"
+read -n 1 -s -r -p "Press any key to close..."
 exit 0
